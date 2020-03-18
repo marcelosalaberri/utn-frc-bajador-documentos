@@ -61,7 +61,7 @@ function descargar() {
         if (respose.status == 200) {
             let s = respose.headers.get("Content-Disposition");
             let name = s.substring(s.indexOf('\"') + 1, s.lastIndexOf('\"'));
-            name = decode_utf8(name); // fix nombre
+            // name = decode_utf8(name); // fix nombre
             folder.file(i + "-" + name, respose.blob());
             console.log(++d + "/" + desc + " BAJADO! -> " + i + "-" + name);
         }
